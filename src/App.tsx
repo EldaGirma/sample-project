@@ -1,5 +1,4 @@
 import { FC } from "react";
-// import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { Grid, Container, Paper } from '@mui/material'
 import ButtonAppBar from "./components/AppBar";
@@ -14,8 +13,6 @@ const App: FC = () => {
             marginTop: 42,
             border: "1px solid darkgray",
             height: '520px',
-
-
           }}>
           <Grid container>
             {/* <TodoForm /> */}

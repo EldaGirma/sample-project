@@ -4,8 +4,6 @@ import { Typography, Grid, Button, Container, Input, Box } from '@mui/material'
 import { ITask } from '../Interfaces'
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 
-
-
 const TodoList = () => {
     const [task, setTask] = useState<string>("")
     const [todoList, setTodoList] = useState<ITask[]>([])
@@ -13,16 +11,15 @@ const TodoList = () => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         setTask(event.target.value)
     }
+
     const addTask = (): void => {
         const newTask = {
             title: task,
             isCompleted: false
-
         }
         setTodoList([...todoList, newTask])
-
-
     }
+
     const completeTask = (titleToComplete: string): void => {
         setTodoList(todoList.map((task) => {
             if (task.title === titleToComplete) {
@@ -31,8 +28,6 @@ const TodoList = () => {
             return task
         }))
     }
-
-
 
     const delTask = (titleToDelete: string): void => {
         setTodoList(todoList.filter((task) => {
@@ -54,28 +49,20 @@ const TodoList = () => {
                         textAlign: 'end'
                     }}>
 
-                        {/* //onSubmit={handleSubmit} */}
-                        {/* <form  autoComplete="off">
-                <FormControl fullWidth={true}> */}
                         <Input placeholder="new task " required={true}
                             style={{ border: '1px solid lightgray', width: '320px' }}
                             onChange={handleChange}
                             value={task}
-                        // onChange={(e) => setText(e.target.value)} 
-
                         />
-
-                        {/* </FormControl> */}
                         <Button variant='contained' color="primary" type="submit"
                             style={{
                                 marginTop: 15,
                                 width: '120px',
                                 textAlign: 'end',
-
                             }}
                             onClick={addTask}
                         >Add task</Button>
-                        {/* </form> */}
+
                     </Box>
                 </Container>
             </Grid>

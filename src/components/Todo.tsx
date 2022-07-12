@@ -22,11 +22,9 @@ const Todo = ({ task, completeTask, delTask }: Props) => {
                     marginLeft: 2,
                     paddingtop: -7,
                     border: '1px solid lightgray'
-
                 }}
             >
                 <Card style={{
-                    //    border:'1px solid red',
                     height: '50px',
                     width: '600px'
                 }} elevation={0}>
@@ -34,24 +32,18 @@ const Todo = ({ task, completeTask, delTask }: Props) => {
 
                         <Typography variant='h5' component="h3"
                             style={todoStyle}
-
-
                         >
-
                             <IconButton onClick={() => { completeTask(task.title); }}>
                                 {task.isCompleted ?
                                     <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
                                 }  </IconButton>
-
 
                             {task.title}
                             <IconButton style={{ float: 'right' }} onClick={() => { delTask(task.title); }}>
                                 <Delete style={{ color: 'red' }} />
                             </IconButton>
                         </Typography>
-
                     </CardContent>
-
                 </Card>
             </Box>
             </Paper>
